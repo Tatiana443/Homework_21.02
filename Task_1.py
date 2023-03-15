@@ -18,16 +18,16 @@ def change_contact(old_data, change_data) -> str:
     with open('phone_book.txt', 'r', encoding='utf8') as data:
         old_data = data.read()
         change_data = old_data.replace(old_data, change_data)
-    with open('phone_book.txt', 'w', encoding='utf8') as data:
+    with open('new_book.txt', 'w', encoding='utf8') as data:
         data.write(change_data)
         print('Список изменен')
 def delete_contact(del_data):
-    with open("phone_book.txt", "r", encoding="utf_8") as data:
-        data = data.readlines()
-    with open("phone_book.txt", "w", encoding="utf_8") as data:
-        for line in data:
-            if del_data not in line.strip("\n"):
-                data.write(line)
+    with open("phone_book.txt", "r", encoding="utf8") as data:
+           data = data.readlines()
+    with open("new_book.txt", "w") as data:
+                for line in data:
+                    if line.strip("\n") != "del_data":
+                        data.write(line)
 def main_menu(numb):
     if numb == 1:
         all_contacts()
