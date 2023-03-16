@@ -2,27 +2,27 @@
 # Пользователь также может ввести имя или фамилию, и Вы должны
 # реализовать функционал для изменения и удаления данных
 def all_contacts():
-    with open('phone_book.txt', 'r', encoding='utf8') as data:
+    with open('phone_book.txt', 'r', encoding='utf-8') as data:
         for line in data:
             print(line)
 def find_contact(name):
-    with open('phone_book.txt', 'r', encoding='utf8') as data:
+    with open('phone_book.txt', 'r', encoding='utf-8') as data:
         for line in data:
             if name in line:
                 print(line)
 def add_contact(new_contact):
-    with open('phone_book.txt', 'a', encoding='utf8') as data:
+    with open('phone_book.txt', 'a', encoding='utf-8') as data:
         data.write('\n')
         data.write(new_contact)
 def change_contact(old_data, change_data) -> str:
-    with open('phone_book.txt', 'r', encoding='utf8') as data:
+    with open('phone_book.txt', 'r', encoding='utf-8') as data:
         old_data = data.read()
         change_data = old_data.replace(old_data, change_data)
-    with open('new_book.txt', 'w', encoding='utf8') as data:
+    with open('new_book.txt', 'w', encoding='utf-8') as data:
         data.write(change_data)
         print('Список изменен')
 def delete_contact(del_data):
-    with open("phone_book.txt", "r", encoding="utf8") as data:
+    with open("phone_book.txt", "r", encoding="utf-8") as data:
            data = data.readlines()
     with open("new_book.txt", "w") as data:
                 for line in data:
